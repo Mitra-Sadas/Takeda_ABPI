@@ -1,7 +1,7 @@
-import streamlit as st
-st.set_page_config(layout="wide")
 from __future__ import print_function, unicode_literals
 from facepplib import FacePP, exceptions
+import streamlit as st
+st.set_page_config(layout="wide")
 import pandas as pd
 import io
 from pathlib import Path
