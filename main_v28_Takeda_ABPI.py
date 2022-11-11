@@ -23,7 +23,6 @@ from pyxlsb import open_workbook as open_xlsb
 import warnings
 warnings.filterwarnings("ignore")
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-import locationtagger
 @st.cache(allow_output_mutation=True)
 def upload1(data, data2):
 	col1, col2 = st.columns(2)
