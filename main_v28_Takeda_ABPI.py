@@ -1,6 +1,7 @@
+import streamlit as st
+st.set_page_config(layout="wide")
 from __future__ import print_function, unicode_literals
 from facepplib import FacePP, exceptions
-import streamlit as st
 import pandas as pd
 import io
 from pathlib import Path
@@ -9,14 +10,11 @@ import numpy as np
 from datetime import datetime
 import base64
 from PIL import Image
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 from bs4 import BeautifulSoup
-from linkedin_scraper import Person, actions, Company
-
 import re
 import preprocessor as p
 from nameparser import HumanName
@@ -24,11 +22,8 @@ from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
 import warnings
 warnings.filterwarnings("ignore")
-
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import locationtagger
-
-
 @st.cache(allow_output_mutation=True)
 def upload1(data, data2):
 	col1, col2 = st.columns(2)
