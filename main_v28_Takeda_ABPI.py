@@ -356,26 +356,26 @@ def getoutput(df, df2, threshold1, threshold2):
 		#potential_matches.loc[potential_matches['title_sm'].str.contains('MD') & potential_matches['Title_hcp'].str.contains('MD'), 'Title_score'] = 1
 		#potential_matches.loc[potential_matches['title_sm'].str.contains('DO') & potential_matches['Title_hcp'].str.contains('DO'), 'Title_score'] = 1
 		#potential_matches.loc[potential_matches['Title_score']!=1, 'Title_score'] = 0
-		potential_matches['Title_hcp'] = potential_matches['Title_hcp'].apply(lambda x: x.split())
-		potential_matches['title_sm'] = potential_matches['title_sm'].apply(lambda x: x.split())
-		for i in range(len(potential_matches)):
-			set1 = set(potential_matches['Title_hcp'][i])
-			set2 = set(potential_matches['title_sm'][i])
-			intsctn = set1.intersection(set2)
-			if len(intsctn)>0:
-				potential_matches['Title_score'][i]=1
-			else:
-				potential_matches['Title_score'][i]=0
+# 		potential_matches['Title_hcp'] = potential_matches['Title_hcp'].apply(lambda x: x.split())
+# 		potential_matches['title_sm'] = potential_matches['title_sm'].apply(lambda x: x.split())
+# 		for i in range(len(potential_matches)):
+# 			set1 = set(potential_matches['Title_hcp'][i])
+# 			set2 = set(potential_matches['title_sm'][i])
+# 			intsctn = set1.intersection(set2)
+# 			if len(intsctn)>0:
+# 				potential_matches['Title_score'][i]=1
+# 			else:
+# 				potential_matches['Title_score'][i]=0
 
-			if potential_matches['City_hcp'][i] in potential_matches['City_sm'][i]:
-				potential_matches['City_score'][i] = 1
-			else:
-				potential_matches['City_score'][i] = 0
+# 			if potential_matches['City_hcp'][i] in potential_matches['City_sm'][i]:
+# 				potential_matches['City_score'][i] = 1
+# 			else:
+# 				potential_matches['City_score'][i] = 0
 
-			if potential_matches['State_hcp'][i] in potential_matches['State code_sm'][i]:
-				potential_matches['State_score'][i] = 1
-			else:
-				potential_matches['State_score'][i] = 0
+# 			if potential_matches['State_hcp'][i] in potential_matches['State code_sm'][i]:
+# 				potential_matches['State_score'][i] = 1
+# 			else:
+# 				potential_matches['State_score'][i] = 0
 
 		potential_matches['Score'] = 0
 
